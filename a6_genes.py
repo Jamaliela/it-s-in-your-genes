@@ -1,6 +1,6 @@
 ######################################################################
-# Author: Dr. Scott Heggen      TODO: Change this to your names
-# Username: heggens             TODO: Change this to your usernames
+# Author: Scott Heggen & Emily Lovell     TODO: Change this to your names
+# Username: heggens & lovelle             TODO: Change this to your usernames
 #
 # Assignment: A06: It's in your Genes
 #
@@ -82,7 +82,7 @@ def chunk_amino_acid(sequence):
 
     # FIXME: Add your code here to complete this function
 
-    list_of_chunks=[]
+    list_of_chunks = []
 
     # FIXME: Obviously, this should not always return an empty string
     return list_of_chunks
@@ -97,33 +97,34 @@ def amino_acid_chunks(threecharseq):
     :return: A string representing the animo acid chunk for that sequence
     """
 
-    ###################################################################
-    # This function is already completed correctly! No changes needed!
-    ###################################################################
+    # ###################################################################### #
+    # #  This function is already completed correctly! No changes needed!  # #
+    # ###################################################################### #
 
     # We haven't learned about dictionaries yet, but here is one for the extra curious.
     # You aren't expected to know what this is yet.
-    translator = { "GCA":"A", "GCC":"A", "GCG":"A", "GCU":"A",
-                        "AGA":"R", "AGG":"R", "CGA":"R", "CGC":"R", "CGG":"R", "CGU":"R",
-                        "GAC":"D", "GAU":"D",
-                        "AAC":"N", "AAU":"N",
-                        "UGC":"C", "UGU":"C",
-                        "GAA":"E", "GAG":"E",
-                        "CAA":"Q", "CAG":"Q",
-                        "GGA":"G", "GGC":"G", "GGU":"G", "GGG":"G",
-                        "CAC":"H", "CAU":"H",
-                        "AUA":"I", "AUC":"I", "AUU":"I",
-                        "UUA":"L", "UUG":"L", "CUA":"L", "CUC":"L", "CUG":"L", "CUU":"L",
-                        "AAA":"K", "AAG":"K",
-                        "AUG":"M",
-                        "UUC":"F", "UUU":"F",
-                        "CCA":"P", "CCC":"P", "CCG":"P", "CCU":"P",
-                        "AGC":"S", "AGU":"S", "UCA":"S", "UCC":"S", "UCG":"S", "UCU":"S",
-                        "ACA":"T", "ACC":"T", "ACG":"T", "ACU":"T",
-                        "UGG":"W",
-                        "UAC":"Y", "UAU":"Y",
-                        "GUA":"V", "GUC":"V", "GUG":"V", "GUU":"V",
-                        "UAA":"*", "UAG":"*", "UGA":"*" }
+    translator = {  "GCA":"A", "GCC":"A", "GCG":"A", "GCU":"A",
+                    "AGA":"R", "AGG":"R", "CGA":"R", "CGC":"R", "CGG":"R", "CGU":"R",
+                    "GAC":"D", "GAU":"D",
+                    "AAC":"N", "AAU":"N",
+                    "UGC":"C", "UGU":"C",
+                    "GAA":"E", "GAG":"E",
+                    "CAA":"Q", "CAG":"Q",
+                    "GGA":"G", "GGC":"G", "GGU":"G", "GGG":"G",
+                    "CAC":"H", "CAU":"H",
+                    "AUA":"I", "AUC":"I", "AUU":"I",
+                    "UUA":"L", "UUG":"L", "CUA":"L", "CUC":"L", "CUG":"L", "CUU":"L",
+                    "AAA":"K", "AAG":"K",
+                    "AUG":"M",
+                    "UUC":"F", "UUU":"F",
+                    "CCA":"P", "CCC":"P", "CCG":"P", "CCU":"P",
+                    "AGC":"S", "AGU":"S", "UCA":"S", "UCC":"S", "UCG":"S", "UCU":"S",
+                    "ACA":"T", "ACC":"T", "ACG":"T", "ACU":"T",
+                    "UGG":"W",
+                    "UAC":"Y", "UAU":"Y",
+                    "GUA":"V", "GUC":"V", "GUG":"V", "GUU":"V",
+                    "UAA":"*", "UAG":"*", "UGA":"*"
+                 }
 
     if threecharseq in translator.keys():
         return translator[threecharseq]     # Given any 3 letter sequence, this returns the amino acid for that sequence
@@ -141,9 +142,9 @@ def sequence_gene(sequence):
     :return: a string representing the amino acid sequence
     """
 
-    ###################################################################
-    #  This function is already completed correctly! No changes needed!
-    ###################################################################
+    # ###################################################################### #
+    # #  This function is already completed correctly! No changes needed!  # #
+    # ###################################################################### #
 
     aaseq=""                                                # Amino acid sequence
     if is_nucleotide(sequence):                             # Checks for a valid sequence

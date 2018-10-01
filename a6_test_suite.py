@@ -59,7 +59,7 @@ def genomics_test_suite():
     # FIXME: Add your own tests here
 
     # Testing the complement_strand() function
-    print("Testing complement_strand()")
+    print("\nTesting complement_strand()")
     testit(complement_strand("CC") == "GG")
     testit(complement_strand("CA") == "GT")
     testit(complement_strand("CGTAGGCAT") == "GCATCCGTA")
@@ -67,27 +67,27 @@ def genomics_test_suite():
     # FIXME: Add your own tests here
 
     # Testing the mRNA() function
-    print("Testing mRNA()")
+    print("\nTesting mRNA()")
     testit(mRNA("GCATCCGTA") == "GCAUCCGUA")
     testit(mRNA("CCATTGGGTT") == "CCAUUGGGUU")
     testit(mRNA("AAGCACCG") == "AAGCACCG")
     # FIXME: Add your own tests here
 
     # Testing amino_acid_chunks()
-    print("Testing amino_acid_chunks()")
+    print("\nTesting amino_acid_chunks()")
     testit(amino_acid_chunks('AGA') == 'R')
     testit(amino_acid_chunks('AFA') == '?')
     # FIXME: (Optional) Add your own tests here. You'll need to dig into and
     # FIXME: understand the dictionary in this function to write more of these tests
 
     # Testing chunk_amino_acid()
-    print("Testing chunk_amino_acid()")
+    print("\nTesting chunk_amino_acid()")
     testit(chunk_amino_acid("CGUCAC") == ["CGU","CAC"])
     testit(chunk_amino_acid("CGUAGGCAUUU") == ["CGU","AGG","CAU"])      # note that the "extra two U's are discarded
     # FIXME: Add your own tests here
 
     # Testing sequence_gene()
-    print("Testing sequence_gene()")
+    print("\nTesting sequence_gene()")
     testit(sequence_gene("T") == '')            # because input is not in a group of 3 nucleotides
     testit(sequence_gene("JAN") == '')          # because input is not a valid string of nucleotides
     testit(sequence_gene("CACGT") == 'V')       # because mRNA sequence is "GUGCA"
@@ -98,7 +98,7 @@ def genomics_test_suite():
                                                 # Grouping into triples, we  get the "ASV" amino acid sequence.
 
     # FIXME: (Optional) Add your own tests here. You'll need to dig into and
-    # FIXME: understand the dictionary in amino_acid_chunks() to write more of these tests
+    # FIXME  understand the dictionary in amino_acid_chunks() to write more of these tests
 
 
 def main():
