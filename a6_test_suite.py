@@ -1,6 +1,6 @@
 ######################################################################
-# Author: Dr. Scott Heggen      TODO: Change this to your names
-# Username: heggens             TODO: Change this to your usernames
+# Author: Scott Heggen & Emily Lovell     TODO: Change this to your names
+# Username: heggens & lovelle             TODO: Change this to your usernames
 #
 # Assignment: A06: It's in your Genes
 #
@@ -48,7 +48,7 @@ def genomics_test_suite():
     :return: None
     """
 
-    # TODO   I highly suggest starting by building more test cases for each function.
+    # TODO   We highly suggest starting by building more test cases for each function.
     # TODO   If you can build accurate test cases, you can be confident that you understand
     # TODO   the intended functionality of each function.
 
