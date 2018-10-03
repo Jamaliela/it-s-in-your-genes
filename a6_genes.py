@@ -94,7 +94,7 @@ def amino_acid_chunks(threecharseq):
     the corresponding single character AminoAcid
 
     :param threecharseq: a sequence of three characters
-    :return: A string representing the animo acid chunk for that sequence
+    :return: A string representing the amino acid chunk for that sequence
     """
 
     # ###################################################################### #
