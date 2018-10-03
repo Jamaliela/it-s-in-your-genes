@@ -73,18 +73,18 @@ def genomics_test_suite():
     testit(mRNA("AAGCACCG") == "AAGCACCG")
     # FIXME: Add your own tests here
 
+    # Testing chunk_amino_acid()
+    print("\nTesting chunk_amino_acid()")
+    testit(chunk_amino_acid("CGUCAC") == ["CGU","CAC"])
+    testit(chunk_amino_acid("CGUAGGCAUUU") == ["CGU","AGG","CAU"])      # note that the "extra two U's are discarded
+    # FIXME: Add your own tests here
+    
     # Testing amino_acid_chunks()
     print("\nTesting amino_acid_chunks()")
     testit(amino_acid_chunks('AGA') == 'R')
     testit(amino_acid_chunks('AFA') == '?')
     # FIXME: (Optional) Add your own tests here. You'll need to dig into and
     # FIXME: understand the dictionary in this function to write more of these tests
-
-    # Testing chunk_amino_acid()
-    print("\nTesting chunk_amino_acid()")
-    testit(chunk_amino_acid("CGUCAC") == ["CGU","CAC"])
-    testit(chunk_amino_acid("CGUAGGCAUUU") == ["CGU","AGG","CAU"])      # note that the "extra two U's are discarded
-    # FIXME: Add your own tests here
 
     # Testing sequence_gene()
     print("\nTesting sequence_gene()")
