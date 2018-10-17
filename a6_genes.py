@@ -5,7 +5,7 @@
 # Assignment: A06: It's in your Genes
 #
 # Purpose: Determine an amino acid sequence given an input DNA sequence
-#
+#Credit: Giorgi Lomia - TA who helped us in this assignment
 ######################################################################
 # Acknowledgements:
 #   Original Author: Dr. Jan Pearce
@@ -100,14 +100,14 @@ def chunk_amino_acid(sequence):
     # FIXME: Finish the docstring above
 
     # FIXME: Add your code here to complete this function
-    list_of_chunks = []
-    n = 0
-    for i in range(len(sequence)//3):
-        list_of_chunks.append(sequence[n:n+3])
-        n=n+3
-
-    # FIXME: Obviously, this should not always return an empty string
+    list_of_chunks = []                            # starting the variable so the chunks can be build
+    n = 0                                          # starting variable at zero so it can be incrementing
+    for i in range(len(sequence)//3):              # for loop to go over the different chunks of three and ignore the remainder
+        list_of_chunks.append(sequence[n:n+3])     #
+        n = n+3
     return list_of_chunks
+    # FIXME: Obviously, this should not always return an empty string
+
 
 
 def amino_acid_chunks(threecharseq):
