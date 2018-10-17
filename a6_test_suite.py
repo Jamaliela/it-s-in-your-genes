@@ -57,7 +57,10 @@ def genomics_test_suite():
     testit(is_nucleotide("CGTAGGCAT") == True)
     testit(is_nucleotide("CGTAFLCAT") == False)
     testit(is_nucleotide("CTABGLCAR") == False)
-    testit(is_nucleotide("CGATGATCA") == True)
+    testit(is_nucleotide("CGACGATTCA") == True)
+    testit(is_nucleotide("CTAAGAGAT") == True)
+    testit(is_nucleotide("YTAWXZBGAR") == False)
+
     # FIXME: Add your own tests here
 
     # Testing the complement_strand() function
@@ -66,6 +69,10 @@ def genomics_test_suite():
     testit(complement_strand("CA") == "GT")
     testit(complement_strand("CGTAGGCAT") == "GCATCCGTA")
     testit(complement_strand("CGTAFLCAT") == "Sequencing Error")
+    testit(complement_strand("CAWY") == "Sequencing Error")
+    testit(complement_strand("POYMGLHKCAT") == "Sequencing Error")
+    testit(complement_strand("CGTACGTACGTA") == "GCATGCATGCAT")
+
     # FIXME: Add your own tests here
 
     # Testing the mRNA() function
@@ -73,12 +80,18 @@ def genomics_test_suite():
     testit(mRNA("GCATCCGTA") == "GCAUCCGUA")
     testit(mRNA("CCATTGGGTT") == "CCAUUGGGUU")
     testit(mRNA("AAGCACCG") == "AAGCACCG")
+    testit(mRNA("GAGATGGGTTTT") == "GAGAUGGGUUUU")
+    testit(mRNA("CAGT") == "CAGU")
+    testit(mRNA("TGTAAACCCTGT") == "UGUAAACCCUGU")
+
     # FIXME: Add your own tests here
 
     # Testing chunk_amino_acid()
     print("\nTesting chunk_amino_acid()")
     testit(chunk_amino_acid("CGUCAC") == ["CGU","CAC"])
-    testit(chunk_amino_acid("CGUAGGCAUUU") == ["CGU","AGG","CAU"])      # note that the "extra two U's are discarded
+    testit(chunk_amino_acid("GAGTTTAAACC") == ["GAG","TTT","AAA"])      # note that the "extra two U's are discarded
+    testit(chunk_amino_acid("TTCAGTAACCA") == ["TTC","AGT","AAC"])
+
     # FIXME: Add your own tests here
     
     # Testing amino_acid_chunks()
