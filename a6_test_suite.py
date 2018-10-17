@@ -56,6 +56,8 @@ def genomics_test_suite():
     print("Testing is_nucleotide()")
     testit(is_nucleotide("CGTAGGCAT") == True)
     testit(is_nucleotide("CGTAFLCAT") == False)
+    testit(is_nucleotide("CTABGLCAR") == False)
+    testit(is_nucleotide("CGATGATCA") == True)
     # FIXME: Add your own tests here
 
     # Testing the complement_strand() function
