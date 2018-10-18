@@ -165,7 +165,6 @@ def main():
     sequence = input("Please enter your DNA strand. (DNA strands are formed of C,A,G,T)")
     sequence_gene(sequence)
 
-
     # TODO When your code is fixed, the following line will print correctly.
     # TODO You do not need to modify the sequence_gene() function; it is correct already.
     print("The original sequence {0} returns {1}".format("CACGT", sequence_gene("CACGT")))
