@@ -1,11 +1,11 @@
 ######################################################################
-# Author: Scott Heggen & Emily Lovell     TODO: Change this to your names
-# Username: heggens & lovelle             TODO: Change this to your usernames
+# Author: Ela Jamali, Emely Alfaro
+# Username: jamalie, alfarozavalae
 #
 # Assignment: A06: It's in your Genes
 #
 # Purpose: Determine an amino acid sequence given an input DNA sequence
-#
+#Credit: Giorgi Lomia - TA who helped us in this assignment
 ######################################################################
 # Acknowledgements:
 #   Original Author: Dr. Jan Pearce
@@ -19,72 +19,71 @@
 
 def is_nucleotide(sequence):
     """
-    Checks that the string sequence provided is a valid string
-    consisting only of the 4 nucleotides A, C, G, and T
+    This function checks if the user's input contains the accepted letters or not. if not false is returned
     Returns True if so, and False otherwise
 
-    :param sequence:
-    :return:
+    :param sequence: the user's input that will be evaluated to see if it is part of the list s
+    :return: Boolean Values True or False
     """
-    # FIXME: Finish the docstring above
-
-    # FIXME: Add your code here to complete this function
-
-    # FIXME: Clearly this should not always return True
-    return True
+    s = ["C","A","G","T"]                           # the list of 4 nucleotides
+    for i in range(len(sequence)):                  # loop to check if the elements entered are part of the user's input (sequence)
+        if sequence[i] not in s:                    # if statement to check if each of the elements are not part of the list
+            return False                            # as the loop is running we cant exit it when a condition is evaluated true, therefore we do false first
+    return True                                     # returning true when checked that all the string is part of the list
 
 
 def complement_strand(sequence):
     """
-    Returns the string which will be the second strand of the DNA sequence
-    given that Ts complement As, and Cs complement Gs. If given
-    a bad input, the function returns "Sequencing Error"
+    This function changes the string into their complements and returns the complement.
+    If there is a bad input, the function returns "Sequencing Error"
 
-    :param sequence:
-    :return:
+    :param sequence: uses the string entered by the user as input
+    :return: complement
     """
-    # FIXME: Finish the docstring above
+    if not is_nucleotide(sequence):
+        return "Sequencing Error"
 
-    complement = ""         # This can be used to "build" the complement
-
-    # FIXME: Add your code here to complete this function
-
-    # FIXME: Obviously, this should not always return ""
+    complement = ""                                 # This can be used to "build" the complement
+    for i in range(len(sequence)):                  # loop to go over the length of the sequence input
+        if sequence[i] == "T":                      # if function to evaluate if the each of the letters of sequence is T then:
+            complement = complement + "A"           # the complement will start building up by adding the new letter A instead of T
+        if sequence[i] == "C":                      # if function to evaluate if the each of the letters of sequence is C then:
+            complement = complement + "G"           # the complement will continue building up by adding the new letter G instead of C
+        if sequence[i] == "A":                      # if function to evaluate if the each of the letters of sequence is A then:
+            complement = complement + "T"           # the complement will continue building up by adding the new letter T instead of A
+        if sequence[i] == "G":                      # if function to evaluate if the each of the letters of sequence is G then:
+            complement = complement + "C"           # the complement will continue building up by adding the new letter C instead of G
     return complement
 
 
 def mRNA(sequence):
     """
-    Replaces each occurrence of the nucleotide T replaced with the nucleotide U.
+    This function replaces each occurrence of the nucleotide T replaced with the nucleotide U.
 
-    :param sequence:
-    :return:
+    :param sequence: the string that the user input as the dna
+    :return: mrna
     """
-    # FIXME: Finish the docstring above
-
-    # FIXME: Add your code here to complete this function
-
     mrna = ""
-
-    # FIXME: Obviously, this should not always return ""
-    return mrna
+    for i in range(len(sequence)):                  # loop to go over the length of the sequence input
+        if sequence[i] == "T":                      # if function to evaluate if each of the letters of sequence is T then:
+            mrna = mrna + "U"                       # if a letter T is found then the mrna starts building up to add a U instead of T
+        else:                                       # when there is not a letter U found  then
+            mrna = mrna + sequence[i]               # the mran will build up by aadding the element evaluated[i]
+    return mrna                                     # the final mrna is returned
 
 
 def chunk_amino_acid(sequence):
     """
-    Uses output of mRNA(sequence) and divides it into substrings of length 3,
-    ignoring any "extra DNA" at the far end returning the relevant substrings in a list.
+    This function takes the mrna and separates it into chunks of three so that those can be returned and the remainder can be discarded.
 
-    :param sequence:
-    :return:
+    :param sequence: this function uses floor division to cut in chunks the string and return only the chunks of three
+    :return: list_of_chunks
     """
-    # FIXME: Finish the docstring above
-
-    # FIXME: Add your code here to complete this function
-
-    list_of_chunks = []
-
-    # FIXME: Obviously, this should not always return an empty string
+    list_of_chunks = []                            # starting the variable so the chunks can be build
+    n = 0                                          # starting variable at zero so it can be incrementing
+    for i in range(len(sequence)//3):              # for loop to go over the different chunks of three and ignore the remainder
+        list_of_chunks.append(sequence[n:n+3])     # list to append each of chunks of dna
+        n = n+3
     return list_of_chunks
 
 
@@ -163,6 +162,8 @@ def main():
 
     :return: None
     """
+    sequence = input("Please enter your DNA strand. (DNA strands are formed of C,A,G,T)")
+    sequence_gene(sequence)
 
     # TODO When your code is fixed, the following line will print correctly.
     # TODO You do not need to modify the sequence_gene() function; it is correct already.

@@ -1,11 +1,9 @@
 # A06: It's in your Genes
 
-Name 1: ____________
+Name 1: Emely Alfaro
 
-Name 2: ____________
+Name 2: Ela Jamali
 
-Name 3 (if needed): ____________
+Repository Link: https://github.com/fall-2018-csc-226/a06-it-s-in-your-genes-alfaro-jamali-a06.git
 
-Repository Link: ______________
-
-Google Document Link: ______________
+Google Document Link: https://docs.google.com/document/d/1pARiAlHNBNf5nydLCEN_8Xsy9SSYoBiEqlINEPQGdE4/edit?usp=sharing
